@@ -1,0 +1,133 @@
+:root {
+  /* ## Colors */
+  --White: hsl(0, 0%, 100%);
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+}
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", serif;
+}
+
+/* Body Styling */
+body {
+  width: 100vw;
+  min-height: 100vh; /* Ensures full-page height */
+  font-weight: 400;
+  font-style: normal;
+  background-color: var(--Light-pink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+}
+
+/* Background Image */
+.back-img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 100%;
+  z-index: 1; /* Ensures it stays behind */
+  object-fit: cover;
+}
+
+.back-img img {
+  width: 100%;
+  height: auto;
+  position: fixed;
+}
+
+/* Card Container */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: hsl(0, 0%, 97%);
+  width: 50%;
+  height: auto;
+  padding: 20px;
+  margin-top: -50px; /* Moves the card up to overlap background */
+  border-radius: 1em;
+  z-index: 2; /* Ensures it's above the background */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* FAQ Header */
+.toogle-container-header {
+  display: flex;
+  gap: 20px;
+}
+
+/* FAQ Items */
+.toogle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--White);
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 1px 1px 3px hsla(0, 0%, 50%, 0.5);
+  height: auto;
+}
+
+.toogle-container img {
+  cursor: pointer;
+}
+
+/* FAQ Hidden Paragraph */
+.hidden-para {
+  display: none;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hidden-para.active {
+  display: block;
+  opacity: 1;
+  max-height: 200px;
+  box-shadow: 1px 1px 3px hsla(0, 0%, 50%, 0.5);
+  background-color: var(--White);
+  padding: 20px;
+  color: var(--Grayish-purple);
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .back-img {
+    max-width: 100%; /* Adjust background for mobile */
+  }
+
+  .card {
+    width: 90%;
+    padding: 15px;
+   
+  }
+
+  .toogle-container-header h1 {
+    font-size: 20px;
+  }
+
+  .toogle-container p {
+    font-size: 14px;
+  }
+
+  .hidden-para {
+    font-size: 13px;
+  }
+}
