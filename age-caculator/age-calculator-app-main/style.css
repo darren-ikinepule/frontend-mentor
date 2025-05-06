@@ -1,20 +1,162 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Agu+Display&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Play&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital@0;1&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"); */
+@font-face {
+  font-family: Poppins;
+  src: url(./assets/fonts/Poppins-ExtraBold.ttf);
+}
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Pop;
 }
 
 :root {
   /* ### Primary Colors*/
   --purple: hsl(259, 100%, 65%);
   --light-red: hsl(0, 100%, 67%);
+
   /* ### Neutral Colors*/
   --White: hsl(0, 0%, 100%);
   --Off-white: hsl(0, 0%, 94%);
   --Light-grey: hsl(0, 0%, 86%);
   --Smokey-grey: hsl(0, 1%, 44%);
   --Off-black: hsl(0, 0%, 8%);
+
+  /* font weights */
+  --fw-400: 400;
+  --fw-700: 700;
+  --fw-800: 800;
+
+  /* main container width */
+  --main-container-width-lg: 840px;
+  --main-container-width-sm: 340px;
+
+  /* input styles */
+  --label-text-lg: 32px;
+  --label-text-sm: 16px;
+  --input-fields-width-lg: 160px;
+  --input-fields-height-lg: 72px;
+  --input-fields-width-sm: 87.67px;
+  --input-fields-height-sm: 54px;
+
+  /* line section */
+  --line-section-padding-lg: 2.9rem;
+  --line-section-padding-sm: 2rem;
+
+  /* button sizes */
+  --submit-button-lg: 96px;
+  --submit-button-sm: 64px;
+
+  /* results test */
+  --font-heading-lg: 1rem;
+  --font-heading-sm: 0.85rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--Light-grey);
+}
+
+.container {
+  background-color: var(--White);
+  min-width: 420px;
+  max-width: 80%;
+  padding: 30px;
+  position: relative;
+  border-radius: 0px 0px 100px 0px;
+}
+
+input {
+  width: 75px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--Off-white);
+  outline: none;
+  font-family: "Poppins";
+  
+}
+
+input:focus {
+  border: 2px solid var(--purple);
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--purple);
+  position: absolute;
+  right: 5%;
+  top: 60px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: hsl(300, 89%, 25%);
+  cursor: pointer;
+}
+
+.submit-btn img {
+  width: 100%;
+  height: auto;
+}
+
+.output span {
+  font-size: 2.75rem;
+  color: var(--purple);
+  font-style: italic;
+}
+
+.output h2 {
+  font-family: "Poppins";
 }
 
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.input-flex {
+  display: flex;
+  border-bottom: 2px solid var(--Off-white);
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+  font-style: italic;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+  .submit-btn {
+    width: 50px;
+    height: 50px;
+    right: 50%;
+    transform: translateX(50%);
+    top: 80px;
+  }
+
+  .submit-btn img {
+    width: 50%;
+  }
+}

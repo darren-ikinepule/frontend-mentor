@@ -11,8 +11,8 @@
 //   }
 // };
 // button.addEventListener("click", () => toogle());
-let toggleButtons = document.querySelector('.btn-img')
-document.addEventListener("click", () => {
+let toggleButtons = document.querySelector(".btn-img");
+  document.addEventListener("click", () => {
   const toggleButtons = document.querySelectorAll(".btn-img");
 
   toggleButtons.forEach((button) => {
@@ -32,6 +32,3 @@ document.addEventListener("click", () => {
     });
   });
 });
-
-
-
